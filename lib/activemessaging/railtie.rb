@@ -1,22 +1,18 @@
-require 'logger'
-require 'rails'
 require 'activemessaging'
 
 module ActiveMessaging
-  class Railtie < Rails::Railtie
-    
-    initializer 'activemessaging.initialize' do
-      
-      ActiveMessaging.load_activemessaging
-      
-      if defined? Rails
-        ActiveMessaging.logger.info "ActiveMessaging: Rails available: Adding dispatcher prepare callback."
+  if defined? Rails::Railtie
+    require 'rails'
+    class Railtie < Rails::Railtie
+      initializer 'activemessaging.initialize' do
+        ActiveMessaging.load_activemessaging
         ActionDispatch::Callbacks.to_prepare :activemessaging do
           ActiveMessaging.reload_activemessaging
         end
       end
-
+      rake_tasks do
+        load "tasks/activemessaging.rake"
+      end
     end
-    
   end
 end

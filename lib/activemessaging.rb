@@ -1,6 +1,6 @@
 require 'active_support'
 require 'ostruct'
-require 'activemessaging/railtie.rb'
+require 'activemessaging/railtie'
 
 module ActiveMessaging
 
