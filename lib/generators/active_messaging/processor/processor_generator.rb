@@ -22,11 +22,11 @@ DESC
       def generate_poller
         template 'poller.rb', File.join('lib', "poller.rb")
         if defined?(JRUBY_VERSION)
-          template 'jruby_poller',  File.join('scripts', "jruby_poller")
-          chmod File.join('scripts', "jruby_poller"), 0755
+          template 'jruby_poller',  File.join('script', "jruby_poller")
+          chmod File.join('script', "jruby_poller"), 0755
         else
-          template 'poller', File.join('scripts', "poller")
-          chmod File.join('scripts', "poller"), 0755
+          template 'poller', File.join('script', "poller")
+          chmod File.join('script', "poller"), 0755
         end
       end
 
