@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jon Tirsen", "Andrew Kuklewicz", "Olle Jonsson", "Sylvain Perez", "Cliff Moon", "Uwe Kubosch"]
-  s.date = %q{2011-04-13}
+  s.date = %q{2011-08-09}
   s.description = %q{ActiveMessaging is an attempt to bring the simplicity and elegance of rails development to the world of messaging. Messaging, (or event-driven architecture) is widely used for enterprise integration, with frameworks such as Java's JMS, and products such as ActiveMQ, Tibco, IBM MQSeries, etc. Now supporting Rails 3 as of version 0.8.0.}
   s.email = %q{activemessaging-discuss@googlegroups.com}
   s.extra_rdoc_files = [
@@ -20,31 +20,6 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "activemessaging.gemspec",
-    "generators/a13g_test_harness/a13g_test_harness_generator.rb",
-    "generators/a13g_test_harness/templates/active_messaging_test.rhtml",
-    "generators/a13g_test_harness/templates/active_messaging_test_controller.rb",
-    "generators/a13g_test_harness/templates/index.rhtml",
-    "generators/filter/USAGE",
-    "generators/filter/filter_generator.rb",
-    "generators/filter/templates/filter.rb",
-    "generators/filter/templates/filter_test.rb",
-    "generators/processor/USAGE",
-    "generators/processor/processor_generator.rb",
-    "generators/processor/templates/application.rb",
-    "generators/processor/templates/broker.yml",
-    "generators/processor/templates/jruby_poller",
-    "generators/processor/templates/messaging.rb",
-    "generators/processor/templates/poller",
-    "generators/processor/templates/poller.rb",
-    "generators/processor/templates/processor.rb",
-    "generators/processor/templates/processor_test.rb",
-    "generators/tracer/USAGE",
-    "generators/tracer/templates/controller.rb",
-    "generators/tracer/templates/helper.rb",
-    "generators/tracer/templates/index.rhtml",
-    "generators/tracer/templates/layout.rhtml",
-    "generators/tracer/templates/trace_processor.rb",
-    "generators/tracer/tracer_generator.rb",
     "init.rb",
     "lib/activemessaging.rb",
     "lib/activemessaging/adapter.rb",
@@ -55,18 +30,43 @@ Gem::Specification.new do |s|
     "lib/activemessaging/adapters/jms.rb",
     "lib/activemessaging/adapters/reliable_msg.rb",
     "lib/activemessaging/adapters/stomp.rb",
+    "lib/activemessaging/adapters/synch.rb",
     "lib/activemessaging/adapters/test.rb",
     "lib/activemessaging/adapters/wmq.rb",
     "lib/activemessaging/base_message.rb",
     "lib/activemessaging/filter.rb",
     "lib/activemessaging/gateway.rb",
     "lib/activemessaging/message_sender.rb",
-    "lib/activemessaging/named_base.rb",
     "lib/activemessaging/processor.rb",
     "lib/activemessaging/railtie.rb",
     "lib/activemessaging/test_helper.rb",
     "lib/activemessaging/trace_filter.rb",
-    "lib/tasks/start_consumers.rake",
+    "lib/generators/active_messaging/a13g_test_harness/a13g_test_harness_generator.rb",
+    "lib/generators/active_messaging/a13g_test_harness/templates/active_messaging_test.rhtml",
+    "lib/generators/active_messaging/a13g_test_harness/templates/active_messaging_test_controller.rb",
+    "lib/generators/active_messaging/a13g_test_harness/templates/index.rhtml",
+    "lib/generators/active_messaging/filter/USAGE",
+    "lib/generators/active_messaging/filter/filter_generator.rb",
+    "lib/generators/active_messaging/filter/templates/filter.rb",
+    "lib/generators/active_messaging/filter/templates/filter_test.rb",
+    "lib/generators/active_messaging/processor/USAGE",
+    "lib/generators/active_messaging/processor/processor_generator.rb",
+    "lib/generators/active_messaging/processor/templates/application.rb",
+    "lib/generators/active_messaging/processor/templates/broker.yml",
+    "lib/generators/active_messaging/processor/templates/jruby_poller",
+    "lib/generators/active_messaging/processor/templates/messaging.rb",
+    "lib/generators/active_messaging/processor/templates/poller",
+    "lib/generators/active_messaging/processor/templates/poller.rb",
+    "lib/generators/active_messaging/processor/templates/processor.rb",
+    "lib/generators/active_messaging/processor/templates/processor_test.rb",
+    "lib/generators/active_messaging/tracer/USAGE",
+    "lib/generators/active_messaging/tracer/templates/controller.rb",
+    "lib/generators/active_messaging/tracer/templates/helper.rb",
+    "lib/generators/active_messaging/tracer/templates/index.rhtml",
+    "lib/generators/active_messaging/tracer/templates/layout.rhtml",
+    "lib/generators/active_messaging/tracer/templates/trace_processor.rb",
+    "lib/generators/active_messaging/tracer/tracer_generator.rb",
+    "lib/tasks/activemessaging.rake",
     "poller.rb",
     "test/all_tests.rb",
     "test/app/config/broker.yml",
@@ -84,18 +84,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.4.2}
   s.summary = %q{Official activemessaging gem, now hosted on github.com/kookster. (kookster prefix temporary)}
-  s.test_files = [
-    "test/all_tests.rb",
-    "test/asqs_test.rb",
-    "test/config_test.rb",
-    "test/filter_test.rb",
-    "test/gateway_test.rb",
-    "test/jms_test.rb",
-    "test/reliable_msg_test.rb",
-    "test/stomp_test.rb",
-    "test/test_helper.rb",
-    "test/tracer_test.rb"
-  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
