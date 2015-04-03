@@ -5,7 +5,7 @@
 # stub: activemessaging 0.13.1 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "activemessaging"
+  s.name = "gz_activemessaging"
   s.version = "0.13.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
